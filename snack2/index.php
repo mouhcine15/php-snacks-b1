@@ -21,5 +21,24 @@
         <input type="text" name="age" id="age" placeholder="inserisci età">
         <button>invio</button>
     </form>
+    
+    <?php 
+        
+        // if (strlen($name = 0)) {
+        //     echo 'inserisci credenziali';
+        // } else if (strlen($name) >= 3) {
+        //     echo 'accesso riuscito';
+        // } else {
+        //     echo 'accesso negato';
+        // };
+
+        if (strlen($name) >= 3 && strpos($mail, '@') && strpos($mail, '.') && is_numeric($age)) {
+            echo 'accesso riuscito';
+        } else {
+            echo 'accesso negato';
+        };
+    
+    
+    ?>
 </body>
 </html>

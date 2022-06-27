@@ -1,9 +1,9 @@
-<?php 
-    $numeri_casuali = [];
-    $rand_num = range(0, 999);
-    shuffle($rand_num);
-    $rand_num = array_slice($rand_num, 0, 14);
-    array_push($numeri_casuali, $rand_num);
+ <?php 
+    // $numeri_casuali = [];
+    // $rand_num = range(0, 999);
+    // shuffle($rand_num);
+    // $rand_num = array_slice($rand_num, 0, 14);
+    // array_push($numeri_casuali, $rand_num);
     
 ?>
 
@@ -20,11 +20,24 @@
     <?php 
         // print_r($numeri_casuali);
         // echo $numeri_casuali;
-        $arr_length = count($numeri_casuali);
-        for ($_i = 0; $_i <= $arr_length ; $_i++) { 
-        $numero = $numeri_casuali[$_i];
-        echo "<div>{$numero[$_i]}</dic>";
-    }
+    //     $arr_length = count($numeri_casuali);
+    //     for ($_i = 0; $_i <= $arr_length ; $_i++) { 
+    //     $numero = $numeri_casuali[$_i];
+    //     echo "<div>{$numero[$_i]}</dic>";
+    // }
+
+
+        $numeri_casuali = [];
+        while (count($numeri_casuali) < 15) {
+            $numero = rand(0, 999);
+            if (!in_array($numero, $numeri_casuali)) {
+                $numeri_casuali[] = $numero;
+            }
+        };
+        for ($_i = 0; $_i < count($numeri_casuali); $_i++) {
+            echo "<div>{$numeri_casuali[$_i]}</div>";
+        };  
+
     ?>
 </body>
 </html>
